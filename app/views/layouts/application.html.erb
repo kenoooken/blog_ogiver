@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>BolgOgi</title>
+    <title>AssociationTutorial</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,18 @@
   </head>
 
   <body>
+
+    <% if user_signed_in? %> 
+      <%= link_to "新規投稿", new_post_path %>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      <%= link_to "マイページ", user_path(current_user.id) %>
+    <% else %>
+      <%= link_to "新規登録", new_user_registration_path %>
+      <%= link_to "ログイン", new_user_session_path %>
+    <% end %>
+      <%= link_to "記事一覧", posts_path %>
+      <%= link_to "ユーザー一覧", users_path %>
+
     <%= yield %>
   </body>
 </html>

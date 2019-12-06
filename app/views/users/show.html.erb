@@ -1,0 +1,8 @@
+<h1>Users#show</h1>
+
+<p><span>email: </span><%= @user.email %></p>
+
+<% @posts.each do |post| %>
+  <hr>
+  <p><span>ブログ記事</span><%=link_to post.body, post_path(post.id) %></p>
+<% end %>

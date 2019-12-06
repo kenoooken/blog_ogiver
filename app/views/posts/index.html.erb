@@ -1,0 +1,7 @@
+<h1>Posts#index</h1>
+
+<% @posts.each do |post| %>
+  <hr>
+<p>ブログ内容▼</p>
+  <p><%=link_to post.body, post_path(post.id) %></p>
+<% end %>

@@ -1,0 +1,9 @@
+<h1>Posts#new</h1>
+
+<%= form_for @post do |f| %>
+  <p>
+    <%= f.label :body,"ブログ記事" %>
+    <%= f.text_field :body %>
+  </p>
+  <%= f.submit %>
+<% end %>
