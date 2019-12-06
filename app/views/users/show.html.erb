@@ -6,3 +6,8 @@
   <hr>
   <p><span>ブログ記事</span><%=link_to post.body, post_path(post.id) %></p>
 <% end %>
+<% @favorite_posts.each do |post| %>
+  <hr>
+    <p>いいね▼</p>
+  <p><%=link_to post.body, post_path(post.id) %></p>
+<% end %>

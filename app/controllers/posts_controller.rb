@@ -5,7 +5,7 @@ before_action :authenticate_user!, except: [:index]
           @post = Post.new
   end
     
-def create
+    def create
       
     @post = Post.new(post_params)  
     @post.user_id = current_user.id 
@@ -20,12 +20,13 @@ def create
 
   def show
           @post = Post.find(params[:id])
+        @post = @post.user
   end
 
 
 private
     def post_params
-      params.require(:post).permit(:body) # tweetモデルのカラムのみを許可
+      params.require(:post).permit(:body) 
     end
     
 end
