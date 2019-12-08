@@ -19,8 +19,8 @@ before_action :authenticate_user!, except: [:index]
   end
 
   def show
-          @post = Post.find(params[:id])
-        @post = @post.user
+        @post = Post.find(params[:id])
+        @user = @post.user
   end
 
 
