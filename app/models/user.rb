@@ -3,6 +3,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
     
+    mount_uploader :picture, ImageUploader
+    
      has_many :posts 
       has_many :favorites  
       has_many :favorite_posts, through: :favorites, source: :post 

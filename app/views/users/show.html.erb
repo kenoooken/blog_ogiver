@@ -1,5 +1,5 @@
 <h1>Users#show</h1>
-
+<%= image_tag @user.picture.to_s, class: "img-thumbnail" %>
 <p><span>email: </span><%= @user.email %></p>
 
 <p><%=link_to "フォロー", follows_user_path(@user.id) %></p>
