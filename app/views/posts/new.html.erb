@@ -1,10 +1,87 @@
-<h1>Posts#new</h1>
+<h2>新規記事</h2>
 
-<%= form_for @post do |f| %>
-  <p>
-    <%= f.label :body,"ブログ記事" %>
-    <%= f.text_field :body %>
-      <center><%= f.file_field :image %></center>
-  </p>
-  <%= f.submit %>
-<% end %>
+            <%= form_with model: @post do |f| %>
+
+            <h3>タイトル</h3>
+            <%= f.text_field :title, size: "120x3" %>
+<br>
+<br>
+            <center><%= f.file_field :image %></center>
+<br>
+            <h3>記事</h3>
+            <%= f.text_area :body, size: "120x3" %>
+<br>
+            
+
+
+
+
+
+<div class="cp_tab">
+	<input type="radio" name="cp_tab" id="tab1_1" aria-controls="first_tab01" checked>
+	<label for="tab1_1">First Tab</label>
+	<input type="radio" name="cp_tab" id="tab1_2" aria-controls="second_tab01">
+	<label for="tab1_2">Second Tab</label>
+	<input type="radio" name="cp_tab" id="tab1_3" aria-controls="third_tab01">
+	<label for="tab1_3">Third Tab</label>
+	<input type="radio" name="cp_tab" id="tab1_4" aria-controls="force_tab01">
+	<label for="tab1_4">Force Tab</label>
+	<div class="cp_tabpanels">
+		<div id="first_tab01" class="cp_tabpanel">
+		<h3>見出し</h3>
+		<p>
+            
+            <%= f.text_field :second_title, size: "120x3" %>
+           
+            </p>
+        <h3>記事</h3>
+		<p>
+            
+            <%= f.text_area :second_body, size: "120x3" %>
+            
+        <h3>リンク</h3>
+		<p>
+            
+            <%= f.text_field :second_link, size: "120x3" %>
+<br>
+<br>
+           <%= f.submit "投稿", class: "btn btn-primary" %>
+          <% end %>
+            </p>
+            
+		</div>
+		<div id="second_tab01" class="cp_tabpanel">
+            
+            ＊今現在、作成中です。▼
+            
+		<h2>タイトル</h2>
+		<p>
+            <%= form_with model: @post do |f| %>
+            <%= f.text_field :two_title, size: "10x10" %>
+           <%= f.submit "投稿", class: "btn btn-primary" %>
+          <% end %>
+            </p>
+        <h2>記事</h2>
+		<p>
+            <%= form_with model: @post do |f| %>
+            <%= f.text_area :two_boby, size: "40x3" %>
+            <%= f.submit "投稿", class: "btn btn-primary" %>
+          <% end %>
+        <h2>リンク</h2>
+		<p>
+            <%= form_with model: @post do |f| %>
+            <%= f.text_field :two_link %>
+           <%= f.submit "投稿", class: "btn btn-primary" %>
+          <% end %>
+            </p>
+		</div>
+		<div id="third_tab01" class="cp_tabpanel">
+		<h2>Third Tab</h2>
+		<p>Third Tab text</p>
+		</div>
+		<div id="force_tab01" class="cp_tabpanel">
+		<h2>Force Tab</h2>
+		<p>Force Tab text</p>
+		</div>
+	</div>
+</div>

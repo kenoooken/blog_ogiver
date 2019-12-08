@@ -22,7 +22,11 @@ ActiveRecord::Schema.define(version: 2019_12_08_074713) do
   create_table "posts", force: :cascade do |t|
     t.text "body"
     t.integer "user_id"
+    t.string "title"
     t.string "image"
+    t.string "second_title"
+    t.text "second_body"
+    t.text "second_link"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
