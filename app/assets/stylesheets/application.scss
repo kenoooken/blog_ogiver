@@ -1,0 +1,428 @@
+@import "bootstrap";
+
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+//= require jquery3
+//= require popper
+//= require bootstrap-sprockets
+ *= require_tree .
+ *= require_self
+ */
+
+.cp_tab *, .cp_tab *:before, .cp_tab *:after {
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+.cp_tab {
+	margin: 1em auto;
+}
+.cp_tab > input[type='radio'] {
+	margin: 0;
+	padding: 0;
+	border: none;
+	border-radius: 0;
+	outline: none;
+	background: none;
+	-webkit-appearance: none;
+	        appearance: none;
+	display: none;
+}
+.cp_tab .cp_tabpanel {
+	display: none;
+}
+.cp_tab > input:first-child:checked ~ .cp_tabpanels > .cp_tabpanel:first-child,
+.cp_tab > input:nth-child(3):checked ~ .cp_tabpanels > .cp_tabpanel:nth-child(2),
+.cp_tab > input:nth-child(5):checked ~ .cp_tabpanels > .cp_tabpanel:nth-child(3),
+.cp_tab > input:nth-child(7):checked ~ .cp_tabpanels > .cp_tabpanel:nth-child(4),
+.cp_tab > input:nth-child(9):checked ~ .cp_tabpanels > .cp_tabpanel:nth-child(5),
+.cp_tab > input:nth-child(11):checked ~ .cp_tabpanels > .cp_tabpanel:nth-child(6) {
+	display: block;
+}
+.cp_tab > label {
+	position: relative;
+	display: inline-block;
+	padding: 15px;
+	cursor: pointer;
+	border: 1px solid transparent;
+	border-bottom: 0;
+}
+.cp_tab > label:hover,
+.cp_tab > input:focus + label {
+	color: #0066cc;
+}
+.cp_tab > input:checked + label {
+	margin-bottom: -1px;
+	border-color: #cccccc;
+	border-bottom: 1px solid #ffffff;/*背景色と同じ*/
+	border-radius: 6px 6px 0 0;
+}
+.cp_tab .cp_tabpanel {
+	padding: 0.5em 1em;
+	border-top: 1px solid #cccccc;
+}
+@media (max-width: 480px) {
+	.cp_tab {
+		width: 100%;
+		font-size: 0.8em;
+	}
+	.cp_tab label {
+		padding: 0.5em;
+	}
+}
+
+   span {
+        text-align: right;
+    }
+
+/* 記事内容 */
+
+.box8 {
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    color: #232323;
+    background: #fff8e8;
+    border-left: solid 10px #ffc06e;
+}
+.box8 p {
+    margin: 0; 
+    padding: 0;
+}
+
+/* 見出し */
+
+
+/* universal */
+
+@font-face{
+font-family:'HuiFontP109';
+src:url('https://dl.dropboxusercontent.com/s/6snqvg654tirsyv/HuiFontP109.eot');
+src:url('https://dl.dropboxusercontent.com/s/6snqvg654tirsyv/HuiFontP109.eot?#iefix') format('embedded-opentype'),
+url('https://dl.dropboxusercontent.com/s/7pscemjdvt0wyiq/HuiFontP109.woff') format('woff'),
+url('https://dl.dropboxusercontent.com/s/0w9uuopxrns8ehi/HuiFontP109.ttf') format('truetype'),
+url('https://dl.dropboxusercontent.com/s/xnnsbxtz8o6d98i/HuiFontP109.svg#HuiFontP109') format('svg');
+}
+
+body,input,textarea{
+  font-family:'HuiFontP109';font-size:16px;
+}
+
+body {
+  padding-top: 0px;
+  color: #546E7A;
+}
+
+a {
+  text-decoration: none;
+}
+
+.field{
+  padding-bottom: 20px;
+}
+
+.user_info{
+  margin: 100px;
+}
+
+
+/* 段落調整 */
+
+.mb2{
+   margin-bottom: 2em;
+}
+
+.mb3{
+   margin-bottom: 3em;
+}
+
+
+/* タグ */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 5em;
+  letter-spacing: -2px;
+  padding: 300px 0px 350px 0px;
+}
+
+h2 {
+  font-size: 2.0em;
+  letter-spacing: -2px;
+  margin: 100px 0px;
+  font-weight: normal;
+  color: gray;
+}
+
+h3 {
+  font-size: 1.8em;
+  letter-spacing: -2px;
+  margin: 20px 0px;
+  font-weight: normal;
+  color: gray;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+
+/* header */
+
+header{
+  opacity: 0.9;
+  font-weight: bold;
+}
+
+#logo {
+  font-size: 2.2em;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+
+/* footer */
+
+footer {
+  margin-top: 50px;
+  padding-bottom: 50px;
+  border-top: 1px solid gray;
+}
+
+
+/* トップページ */
+
+.top-wrapper {
+  height: 1500px;
+  color: #fff;
+  position: relative;
+}
+
+.bg{
+  width: 100%;
+  height: 46%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("background_image.jpg");
+  background-size: cover;
+}
+  
+
+/* ボタン */
+
+.btn {
+  border: 1px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.btn-xl {
+  padding: 20px 100px;
+  font-size: 35px;
+  border-radius: 8px;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 10px;
+  opacity: 0;
+}
+
+
+/* エラー */
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+    list-style: none;
+  }
+}
+
+
+/* users/index */
+
+.users{
+  margin: 0;
+  li {
+    overflow: auto;
+  }
+}
+
+.user { 
+  width: 220px;
+  padding: 20px;
+  margin-left: 30px;
+  height: 270px;
+  float: left;
+}
+
+.username {
+  font-size: 20px;
+}
+
+
+/* users/showのmicroposts表示 */
+
+.microposts {
+  margin: 0;
+  li {
+    overflow: auto;
+  }
+}
+
+.micropost {
+  width: 300px;
+  padding: 20px;
+  height: 450px;
+  float: left;
+}
+
+.heart-color{
+  color: fuchsia;
+}
+
+
+/*　alert/danger */
+
+.alert {
+	text-align: center;
+	margin-top: 28px;
+}
+
+.alert-info {
+  background-color: #bde9ff;
+  border-color: #bde9ff;
+  color: #4c6977;
+}
+ 
+.alert-danger {
+  background-color: #f3c0c0;
+  border-color: #f3c0c0;
+  color: #3e3a3a;
+}
+
+
+/* フォロー */
+
+.stats a {
+    padding: 0 10px;
+    color: gray;
+    &:hover {
+      text-decoration: none;
+      color: blue;
+    }
+}
+
+
+
+
+/* リンクカード */
+
+body {
+  background: #eee;
+}
+.card {
+  margin: 30px auto;
+  width: 350px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+}
+.card-img {
+  border-radius: 5px 5px 0 0;
+  max-width: 100%;
+  height: auto;
+}
+.card-content {
+  padding: 20px;
+}
+.card-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+.card-text {
+  color: #777;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.card-link {
+  text-align: center;
+  border-top: 1px solid #eee;
+  padding: 20px;
+}
+.card-link a {
+  text-decoration: none;
+  color: #0bd;
+  margin: 0 10px;
+}
+.card-link a:hover {
+  color: #0090aa;
+}
+
+// フッター
+
+.footer_fix_btn {
+  position:fixed;
+  bottom:0;
+  width:100%;
+  padding:30px 0 10px 0;
+  text-align:center;
+  background:#f8f8f8; // 背景色
+  font-size:16px; // テキストの大きさ
+  color:#000000; // 文字色
+  border-top:2px solid #ffffff; // ボタン上部の縁取りの色
+}
+.footer_fix_btn a {
+  display:block;
+  width:100%;
+  text-decoration:none;
+}
+.footer_fix_btn a:hover {
+  opacity:0.8;
+}
+
+
+// モバイル表示
+
+/*PCの場合*/
+.pc	{ display:inline!important; }
+.mb	{ display:none!important; }
+@media screen and (max-width: 768px) {
+/*タブレット、スマホの場合*/
+.pc	{ display:none!important; }
+.mb { display:inline!important; }
+}
