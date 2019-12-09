@@ -167,6 +167,7 @@ h2 {
 }
 
 h3 {
+    word-wrap: break-word;
   font-size: 1.8em;
   letter-spacing: -2px;
   margin: 20px 0px;
@@ -175,6 +176,7 @@ h3 {
 }
 
 p {
+    word-wrap: break-word;
   font-size: 1.1em;
   line-height: 1.7em;
 }

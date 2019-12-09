@@ -1,17 +1,25 @@
 <h2>新規記事</h2>
 
-            <%= form_with model: @post do |f| %>
+         <% @post.errors.full_messages.each do |message| %>
+            <div class="form-error">
+              <%= message %>
+            </div>
+          <% end %>
+
+            <%= form_for @post do |f| %>
 
             <h3>タイトル</h3>
             <%= f.text_field :title, size: "120x3" %>
 <br>
 <br>
+            <h3>サムネ</h3>
             <center><%= f.file_field :image %></center>
 <br>
-            <h3>記事</h3>
+            <h3>メタタグ</h3>
             <%= f.text_area :body, size: "120x3" %>
 <br>
-            
+            <%= f.submit "投稿", class: "btn btn-primary" %>
+            <% end %>
 
 
 
@@ -30,29 +38,28 @@
 		<div id="first_tab01" class="cp_tabpanel">
 		<h3>見出し</h3>
 		<p>
-            
+            <%= form_for @post do |f| %>
             <%= f.text_field :second_title, size: "120x3" %>
-           
-            </p>
+        </p>
+        <h3>画像</h3>
+            <center><%= f.file_field :image %></center>
         <h3>記事</h3>
 		<p>
-            
             <%= f.text_area :second_body, size: "120x3" %>
-            
+        </p>
         <h3>リンク</h3>
 		<p>
-            
             <%= f.text_field :second_link, size: "120x3" %>
+        </p>
 <br>
 <br>
+        <p>
+            
            <%= f.submit "投稿", class: "btn btn-primary" %>
-          <% end %>
-            </p>
+        </p>
             
 		</div>
 		<div id="second_tab01" class="cp_tabpanel">
-            
-            ＊今現在、作成中です。▼
             
 		<h2>タイトル</h2>
 		<p>
@@ -82,6 +89,7 @@
 		<div id="force_tab01" class="cp_tabpanel">
 		<h2>Force Tab</h2>
 		<p>Force Tab text</p>
+            <% end %>
 		</div>
 	</div>
 </div>

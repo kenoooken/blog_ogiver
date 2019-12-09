@@ -17,7 +17,11 @@
 
 <% end %>
 
-<p><span>email: </span><%= @user.email %></p> <!-- 追加 -->
+<p><span>名前：</span><%=link_to @post.user.username, user_path(@post.user.id) %></p> 
+<br>
+<br>
+<br>
+<br>
 
 <div class="footer_fix_btn">
     <div class="pc">

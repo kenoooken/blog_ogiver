@@ -27,6 +27,23 @@ ActiveRecord::Schema.define(version: 2019_12_08_074713) do
     t.string "second_title"
     t.text "second_body"
     t.text "second_link"
+    t.string "second_image"
+    t.string "third_title"
+    t.text "third_body"
+    t.text "third_link"
+    t.string "third_image"
+    t.string "fourth_title"
+    t.text "fourth_body"
+    t.text "fourth_li4nk"
+    t.string "fourth_image"
+    t.string "fifth_title"
+    t.text "fifth_body"
+    t.text "fifth_link"
+    t.string "fifth_image"
+    t.string "sixth_title"
+    t.text "sixth_body"
+    t.text "sixth_link"
+    t.string "sixth_image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
