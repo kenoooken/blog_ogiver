@@ -1,0 +1,120 @@
+
+<br>
+<br>
+<br>
+<br>
+<%= link_to("プレビュー", "/posts/#{@post.id}/edit", class: "btn btn-warning") %>
+<br>
+<br>
+<h3>タイトル</h3>
+<h3><%= @post.title %></h3>
+<br>
+<h4>メタタグ</h4>
+<p><%= @post.body %></p>
+
+<h3><%= @post.second_title %></h3>
+<p><%= @post.second_body %></p>
+<a href= "<%= @post.second_link %>" ><%= @post.second_link %></a>
+
+
+
+
+            <%= form_with model: @post do |f| %>
+
+            <h3>タイトル</h3>
+            <%= f.text_field :title, size: "120x3" %>
+<br>
+            <h3>記事</h3>
+            <%= f.text_area :body, size: "120x10" %>
+<br>
+           
+
+
+
+
+
+<div class="cp_tab">
+	<input type="radio" name="cp_tab" id="tab1_1" aria-controls="first_tab01" checked>
+	<label for="tab1_1">First Tab</label>
+	<input type="radio" name="cp_tab" id="tab1_2" aria-controls="second_tab01">
+	<label for="tab1_2">Second Tab</label>
+	<input type="radio" name="cp_tab" id="tab1_3" aria-controls="third_tab01">
+	<label for="tab1_3">Third Tab</label>
+	<input type="radio" name="cp_tab" id="tab1_4" aria-controls="force_tab01">
+	<label for="tab1_4">Force Tab</label>
+    <input type="radio" name="cp_tab" id="tab1_5" aria-controls="five_tab01">
+	<label for="tab1_5">five Tab</label>
+	<div class="cp_tabpanels">
+		<div id="first_tab01" class="cp_tabpanel">
+		<h3>見出し</h3>
+		<p>
+            
+            <%= f.text_field :second_title, size: "120x3" %>
+           
+            </p>
+        <h3>記事</h3>
+		<p>
+            
+            <%= f.text_area :second_body, size: "120x3" %>
+            
+        <h3>リンク</h3>
+		<p>
+            
+            <%= f.text_field :second_link, size: "120x3" %>
+<br>
+<br>
+           <%= f.submit "投稿", class: "btn btn-primary" %>
+          <% end %>
+            <%= link_to("プレビュー", "/posts/#{@post.id}/edit", class: "btn btn-warning") %>
+            </p>
+            
+		</div>
+		<div id="second_tab01" class="cp_tabpanel">
+            
+            
+		<h2>タイトル</h2>
+		<p>
+            <%= form_with model: @post do |f| %>
+            <%= f.text_field :two_title, size: "10x10" %>
+           <%= f.submit "投稿", class: "btn btn-primary" %>
+          <% end %>
+            </p>
+        <h2>記事</h2>
+		<p>
+            <%= form_with model: @post do |f| %>
+            <%= f.text_area :two_boby, size: "40x3" %>
+            <%= f.submit "投稿", class: "btn btn-primary" %>
+          <% end %>
+        <h2>リンク</h2>
+		<p>
+            <%= form_with model: @post do |f| %>
+            <%= f.text_field :two_link %>
+           
+            </p>
+		</div>
+		<div id="third_tab01" class="cp_tabpanel">
+		<h2>Third Tab</h2>
+		<p>Third Tab text</p>
+		</div>
+		<div id="force_tab01" class="cp_tabpanel">
+		<h2>Force Tab</h2>
+		<p>Force Tab text</p>
+		</div>
+        <div id="five_tab01" class="cp_tabpanel">
+		<h2>Force Tab</h2>
+		<p>Force Tab text</p>
+		</div>
+	</div>
+</div>
+<br>
+<br>
+
+<div class="footer_fix_btn">
+    <%= f.submit "投稿", class: "btn btn-primary btn-lg" %>
+    <br>
+<%= link_to("プレビュー", "/posts/#{@post.id}/edit", class: "btn btn-warning pc") %>
+    <br>
+          <% end %>
+    <br>
+    OGI.ver by <a href="https://twitter.com/sim_niigata">オギギ＠ブログ▶︎エンジニア<i class="fab fa-twitter"></i></a>
+</div>

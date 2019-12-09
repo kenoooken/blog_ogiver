@@ -1,0 +1,62 @@
+<br>
+<h2>記事一覧</h2>
+<p>Find me in app/views/tweets/index.html.erb</p>
+
+<% @posts.each do |post| %>
+  <br>
+
+<p><span>名前：</span><%=link_to post.user.username, user_path(post.user.id) %></p> 
+
+<section class="card">
+    <%= image_tag post.image.to_s, class:"card-img"%>
+  <div class="card-content">
+    <p class="card-text">
+        <span>タイトル▼</span>
+        <br>
+      <h3><%=link_to post.title, post_path(post.id)%></h3>
+            </p>
+  </div>
+  <div class="card-link"><span>ブログ内容▼</span>
+      <br>
+    <p><%= link_to post.body, post_path(post.id) %></p>
+  </div>
+</section>   
+
+  <% if user_signed_in? %>
+
+<!-- <p><%= link_to '[Edit]', edit_post_path(post.id) %></p> -->
+
+    <% if post.favorited_by?(current_user) %>
+        <p><span>お気に入り解除▼ </span>
+            <br>
+            <%=link_to post.favorites.count, post_favorites_path(post.id), method: :delete ,class: "btn btn-warning" %></p>
+    <% else %>
+        <p><span>お気に入り登録▼ </span>
+            <br>
+            <%=link_to post.favorites.count, post_favorites_path(post.id), method: :post ,class: "btn btn-warning" %></p>
+    <% end %>
+
+
+    <% if current_user != post.user %>
+        <% if post.user.followed_by?(current_user) %>
+            <p><%=link_to "フォロー済み", user_relationships_path(post.user.id), method: :delete %></p>
+        <% else %>
+            <p><%=link_to "フォローする", user_relationships_path(post.user.id), method: :post %></p>
+        <% end %>
+    <% end %>
+
+
+  <% else %>
+    <p><span>お気に入り数: </span><%= post.favorites.count %></p>
+  <% end %>
+<% end %>
+<%= paginate @posts %>
+<br>
+<br>
+
+<div class="footer_fix_btn">
+     <div class="pc">
+    <%= link_to "新規投稿", new_post_path, class: "btn btn-primary" %>
+         </div>
+    OGI.ver by <a href="https://twitter.com/sim_niigata">オギギ＠ブログ▶︎エンジニア<i class="fab fa-twitter"></i></a>
+</div>
