@@ -3,7 +3,6 @@
 <br>
 <h3><span>名前</span><%= @user.username %></h3>
 <%= image_tag @user.picture.to_s, class: "img-thumbnail" %>
-<p><span>email:</span><%= @user.email %></p>
 <p><%=link_to "フォロー", follows_user_path(@user.id) %></p>
 <p><%=link_to "フォロワー", followers_user_path(@user.id) %></p>
 <% if current_user != @user %>
