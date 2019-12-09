@@ -6,6 +6,7 @@
 <%= link_to("プレビュー", "/posts/#{@post.id}/edit", class: "btn btn-warning") %>
 <br>
 <br>
+<h3>投稿一覧のプレビュー▼</h3>
 <section class="card">
     <%= image_tag @post.image.to_s, class:"card-img"%>
   <div class="card-content">
@@ -22,11 +23,11 @@
 </section> 
 
 <br>
-<h3>プレビュー</h3>
+<h3>プレビュー▼</h3>
     <!--　１タブ　-->
 <h3><%= @post.second_title %></h3>
 <%= image_tag @post.second_image.to_s, class:"card-img"%>
-<p><%= @post.second_body %></p>
+<%= @post.second_body %>
 <a href= "<%= @post.second_link %>" ><%= @post.second_link %></a>
 <br>
     <!--　２タブ　-->
@@ -59,12 +60,14 @@
             <%= form_with model: @post do |f| %>
 
             <h3>タイトル</h3>
+            <p>＊タイトル無し・100文字以上は投稿できません</p>
             <%= f.text_field :title, size: "120x3" %>
 <br>
             <h3>サムネ</h3>
             <center><%= f.file_field :image %></center>
 <br>
             <h3>メタタグ</h3>
+            <p>＊100文字以上は投稿できません</p>
             <%= f.text_area :body, size: "120x10" %>
 <br>
            

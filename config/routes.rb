@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
     
-
+    post "posts/:id/destroy" => "posts#destroy"
     root 'posts#index'
     
   devise_for :users
