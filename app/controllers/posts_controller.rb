@@ -15,8 +15,9 @@ before_action :authenticate_user!, except: [:index]
     if @post.update(post_params)
             flash[:notice] = "投稿が保存されました"
            # render 'edit'
-            redirect_to "/posts/#{@post.id}"
+            render "edit"
      else
+            flash[:alert] = "しゃしんが　ないよ！"
         #    render plain: @post.erros.inspect
             render 'edit'
         end
@@ -59,11 +60,32 @@ before_action :authenticate_user!, except: [:index]
             params.require(:post).permit(
                 :title,
                 :body,
+                :image,
+                
                 :second_title,
                 :second_body,
                 :second_link,
-                :image
+                :second_image,
                 
+                :third_title,
+                :third_body,
+                :third_link,
+                :third_image,
+                
+                :fourth_title,
+                :fourth_body,
+                :fourth_link,
+                :fourth_image,
+                
+                :fifth_title,
+                :fifth_body,
+                :fifth_link,
+                :fifth_image,
+                
+                :sixth_title,
+                :sixth_body,
+                :sixth_link,
+                :sixth_image,
                 
                 ).merge(user_id: current_user.id)
         end

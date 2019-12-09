@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2019_12_08_074713) do
     t.string "third_image"
     t.string "fourth_title"
     t.text "fourth_body"
-    t.text "fourth_li4nk"
+    t.text "fourth_link"
     t.string "fourth_image"
     t.string "fifth_title"
     t.text "fifth_body"

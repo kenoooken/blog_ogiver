@@ -22,7 +22,7 @@ class CreatePosts < ActiveRecord::Migration[5.2]
         #３つ目の見出し
     t.string :fourth_title
       t.text :fourth_body
-      t.text :fourth_li4nk
+      t.text :fourth_link
       t.string :fourth_image
 
         #４つ目の見出し
