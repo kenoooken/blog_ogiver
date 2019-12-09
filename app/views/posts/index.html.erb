@@ -1,21 +1,41 @@
-<h1>Posts#index</h1>
+<br>
+<h2>記事一覧</h2>
+<p>Find me in app/views/tweets/index.html.erb</p>
 
 <% @posts.each do |post| %>
-<%= image_tag post.image.to_s, class:"card-img"%>
-  <hr>
-<p><span>メール</span><%=link_to post.user.email, user_path(post.user.id) %></p>
-<p>ブログ内容▼</p>
-  <p><%=link_to post.body, post_path(post.id) %></p>
+  <br>
 
+<p><span>名前：</span><%=link_to post.user.username, user_path(post.user.id) %></p> 
+
+<section class="card">
+    <%= image_tag post.image.to_s, class:"card-img"%>
+  <div class="card-content">
+    <p class="card-text">
+        <span>タイトル▼</span>
+        <br>
+      <h3><%=link_to post.title, post_path(post.id)%></h3>
+            </p>
+  </div>
+  <div class="card-link"><span>ブログ内容▼</span>
+      <br>
+    <p><%= link_to post.body, post_path(post.id) %></p>
+  </div>
+</section>   
 
   <% if user_signed_in? %>
-    <% if post.favorited_by?(current_user) %> 
-        <p>いいね解除▼</p>
-        <p><%=link_to post.favorites.count, post_favorites_path(post.id), method: :delete %></p>
+
+<!-- <p><%= link_to '[Edit]', edit_post_path(post.id) %></p> -->
+
+    <% if post.favorited_by?(current_user) %>
+        <p><span>お気に入り解除▼ </span>
+            <br>
+            <%=link_to post.favorites.count, post_favorites_path(post.id), method: :delete ,class: "btn btn-warning" %></p>
     <% else %>
-        <p>いいね登録▼</p>
-        <p><%=link_to post.favorites.count, post_favorites_path(post.id), method: :post %></p>
+        <p><span>お気に入り登録▼ </span>
+            <br>
+            <%=link_to post.favorites.count, post_favorites_path(post.id), method: :post ,class: "btn btn-warning" %></p>
     <% end %>
+
 
     <% if current_user != post.user %>
         <% if post.user.followed_by?(current_user) %>
@@ -25,9 +45,18 @@
         <% end %>
     <% end %>
 
-  <% else %>
-    <p>お気に入り数▼</p>
-    <p><%= post.favorites.count %></p>
-  <% end %>
 
+  <% else %>
+    <p><span>お気に入り数: </span><%= post.favorites.count %></p>
+  <% end %>
 <% end %>
+<%= paginate @posts %>
+<br>
+<br>
+
+<div class="footer_fix_btn">
+     <div class="pc">
+    <%= link_to "新規投稿", new_post_path, class: "btn btn-primary" %>
+         </div>
+    OGI.ver by <a href="https://twitter.com/sim_niigata">オギギ＠ブログ▶︎エンジニア<i class="fab fa-twitter"></i></a>
+</div>

@@ -1,7 +1,9 @@
-<h1>Users#show</h1>
+<br>
+<br>
+<br>
+<h3><span>名前</span><%= @user.username %></h3>
 <%= image_tag @user.picture.to_s, class: "img-thumbnail" %>
-<p><span>email: </span><%= @user.email %></p>
-
+<p><span>email:</span><%= @user.email %></p>
 <p><%=link_to "フォロー", follows_user_path(@user.id) %></p>
 <p><%=link_to "フォロワー", followers_user_path(@user.id) %></p>
 <% if current_user != @user %>
@@ -12,12 +14,30 @@
     <% end %>
 <% end %>
 
-<% @posts.each do |post| %>
-  <hr>
-  <p><span>ブログ記事</span><%=link_to post.body, post_path(post.id) %></p>
-<% end %>
+
+  <br>
+
+
+<section class="card">
+  <div class="card-content">
+    <p class="card-text">
+        <% @posts.each do |post| %>
+        <span>タイトル▼</span>
+        <br>
+      <h3><%=link_to post.title, post_path(post.id)%></h3>
+            <span>ブログ内容▼</span>
+      <br>
+    <p><%= link_to post.body, post_path(post.id) %></p>
+    </p>
+  </div>
+  <div class="card-link">
+      <% end %>
+  </div>
+</section>   
+
+
 <% @favorite_posts.each do |post| %>
   <hr>
     <p>いいね▼</p>
-  <p><%=link_to post.body, post_path(post.id) %></p>
+  <p><%=link_to post.title, post_path(post.id) %></p>
 <% end %>

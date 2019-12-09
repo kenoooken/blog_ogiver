@@ -1,8 +1,32 @@
-<h1>Posts#show</h1>
+<h2><%= @post.title %></h2>
+<% if user_signed_in? && @post.user_id == current_user.id %>
+<%= link_to("編集", "/posts/#{@post.id}/edit", class: "btn btn-primary") %>
+<% end %>
 
-<p>email▼</p>
-<p><%= @user.email %></p> 
-<p>ブログ内容▼</p>
-<p><%= @post.body %></p>
+<br>    
+<h3><%= @post.second_title %></h3>
+<p><%= @post.second_body %></p>
+<a href= "<%= @post.second_link %>" ><%= @post.second_link %></a>
 
 
+<br>
+<br>
+<% if user_signed_in? && @post.user_id == current_user.id %>
+<%= link_to("編集", "/posts/#{@post.id}/edit", class: "btn btn-primary") %>
+   <%= link_to("削除", "/posts/#{@post.id}/destroy", class: "btn btn-primary") %>
+
+<% end %>
+
+<p><span>名前：</span><%=link_to @post.user.username, user_path(@post.user.id) %></p> 
+<br>
+<br>
+<br>
+<br>
+
+<div class="footer_fix_btn">
+    <div class="pc">
+  <%= link_to "新規投稿", new_post_path, class: "btn btn-primary btn-lg" %>
+    </div>
+<%= link_to 'Twitterにシェアする！', "https://twitter.com/share?url=#{request.url}", title: 'Twitter', target: '_blank', class: "btn btn-primary" %>
+    OGI.ver by <a href="https://twitter.com/sim_niigata">オギギ＠ブログ▶︎エンジニア<i class="fab fa-twitter"></i></a>
+</div>

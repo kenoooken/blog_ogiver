@@ -1,16 +1,22 @@
 <header class="navbar navbar-expand-lg navbar-default navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
-
-      <%= link_to "OGI.ver", root_path, id: "logo" %>
+      <br>
+        <%= link_to "OGI.ver", root_path, id: "logo" %>
     </div>
     <nav>
       <ul id="navbar" class="nav navbar-nav navbar-right navbar-collapse collapse">
           
     <% if user_signed_in? %> 
-          <li><%= link_to "新規投稿", new_post_path, class: "btn btn-primary pc" %></li>
-      <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "pc" %></li>
-      <li><%= link_to "マイページ", user_path(current_user.id) %></li>
+          <li>
+              <br>
+              <br>
+              <%= link_to "新規投稿", new_post_path, class: "btn btn-primary pc" %></li>
+      <li><br>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "pc" %>
+          <br>
+          <%= link_to "マイページ", user_path(current_user.id) %>
+        </li>
     <% else %>
       <li><%= link_to "新規登録", new_user_registration_path %></li>
       <li><%= link_to "ログイン", new_user_session_path %></li>

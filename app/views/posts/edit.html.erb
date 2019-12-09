@@ -1,0 +1,201 @@
+
+<br>
+<br>
+<br>
+<br>
+<%= link_to("プレビュー", "/posts/#{@post.id}/edit", class: "btn btn-warning") %>
+<br>
+<br>
+<section class="card">
+    <%= image_tag @post.image.to_s, class:"card-img"%>
+  <div class="card-content">
+    <p class="card-text">
+        <span>タイトル▼</span>
+        <br>
+      <h3><%= @post.title %></h3>
+            </p>
+  </div>
+  <div class="card-link"><span>ブログ内容▼</span>
+      <br>
+    <p><%= @post.body %></p>
+  </div>
+</section> 
+
+<br>
+<h3>プレビュー</h3>
+    <!--　１タブ　-->
+<h3><%= @post.second_title %></h3>
+<%= image_tag @post.second_image.to_s, class:"card-img"%>
+<p><%= @post.second_body %></p>
+<a href= "<%= @post.second_link %>" ><%= @post.second_link %></a>
+<br>
+    <!--　２タブ　-->
+<h3><%= @post.third_title %></h3>
+<%= image_tag @post.third_image.to_s, class:"card-img"%>
+<p><%= @post.third_body %></p>
+<a href= "<%= @post.third_link %>" ><%= @post.third_link %></a>
+<br>
+    <!--　３タブ　-->
+<h3><%= @post.fourth_title %></h3>
+<%= image_tag @post.fourth_image.to_s, class:"card-img"%>
+<p><%= @post.fourth_body %></p>
+<a href= "<%= @post.fourth_link %>" ><%= @post.fourth_link %></a>
+<br>  
+    <!--　４タブ　-->
+<h3><%= @post.fifth_title %></h3>
+<%= image_tag @post.fifth_image.to_s, class:"card-img"%>
+<p><%= @post.fifth_body %></p>
+<a href= "<%= @post.fifth_link %>" ><%= @post.fifth_link %></a>
+<br>
+    <!--　５タブ　-->
+<h3><%= @post.sixth_title %></h3>
+<%= image_tag @post.sixth_image.to_s, class:"card-img"%>
+<p><%= @post.sixth_body %></p>
+<a href= "<%= @post.sixth_link %>" ><%= @post.sixth_link %></a>
+<br>
+
+
+
+            <%= form_with model: @post do |f| %>
+
+            <h3>タイトル</h3>
+            <%= f.text_field :title, size: "120x3" %>
+<br>
+            <h3>サムネ</h3>
+            <center><%= f.file_field :image %></center>
+<br>
+            <h3>メタタグ</h3>
+            <%= f.text_area :body, size: "120x10" %>
+<br>
+           
+
+
+
+<div class="cp_tab">
+	<input type="radio" name="cp_tab" id="tab1_1" aria-controls="first_tab01" checked>
+	<label for="tab1_1"><h3>1 タブ</h3></label>
+	<input type="radio" name="cp_tab" id="tab1_2" aria-controls="second_tab01">
+	<label for="tab1_2"><h3>2 タブ</h3></label>
+	<input type="radio" name="cp_tab" id="tab1_3" aria-controls="third_tab01">
+	<label for="tab1_3"><h3>3 タブ</h3></label>
+	<input type="radio" name="cp_tab" id="tab1_4" aria-controls="force_tab01">
+	<label for="tab1_4"><h3>4 タブ</h3></label>
+    <input type="radio" name="cp_tab" id="tab1_5" aria-controls="five_tab01">
+	<label for="tab1_5"><h3>5 タブ</h3></label>
+	<div class="cp_tabpanels">
+		<div id="first_tab01" class="cp_tabpanel">
+		<h3>見出し</h3>
+            
+            <%= f.text_field :second_title, size: "120x3" %>
+            
+        <h3>画像</h3>
+            <center><%= f.file_field :second_image %></center>
+           
+        <h3>記事</h3>
+            
+            <%= f.text_area :second_body, size: "120x3" %>
+            
+        <h3>リンク</h3>
+            
+            <%= f.text_field :second_link, size: "120x3" %>
+<br>
+<br>
+           <%= f.submit "投稿", class: "btn btn-primary" %>
+            
+		</div>
+		<div id="second_tab01" class="cp_tabpanel">
+		<h3>見出し</h3>
+            
+            <%= f.text_field :third_title, size: "120x3" %>
+            
+        <h3>画像</h3>
+            <center><%= f.file_field :third_image %></center>
+           
+        <h3>記事</h3>
+            
+            <%= f.text_area :third_body, size: "120x3" %>
+            
+        <h3>リンク</h3>
+            
+            <%= f.text_field :third_link, size: "120x3" %>
+<br>
+<br>
+           <%= f.submit "投稿", class: "btn btn-primary" %>
+		</div>
+		<div id="third_tab01" class="cp_tabpanel">
+		<h3>見出し</h3>
+            
+            <%= f.text_field :fourth_title, size: "120x3" %>
+            
+        <h3>画像</h3>
+            <center><%= f.file_field :fourth_image %></center>
+           
+        <h3>記事</h3>
+            
+            <%= f.text_area :fourth_body, size: "120x3" %>
+            
+        <h3>リンク</h3>
+            
+            <%= f.text_field :fourth_link, size: "120x3" %>
+<br>
+<br>
+           <%= f.submit "投稿", class: "btn btn-primary" %>
+		</div>
+		<div id="force_tab01" class="cp_tabpanel">
+		<h3>見出し</h3>
+            
+            <%= f.text_field :fifth_title, size: "120x3" %>
+            
+        <h3>画像</h3>
+            <center><%= f.file_field :fifth_image %></center>
+           
+        <h3>記事</h3>
+            
+            <%= f.text_area :fifth_body, size: "120x3" %>
+            
+        <h3>リンク</h3>
+            
+            <%= f.text_field :fifth_link, size: "120x3" %>
+<br>
+<br>
+           <%= f.submit "投稿", class: "btn btn-primary" %>
+		</div>
+        <div id="five_tab01" class="cp_tabpanel">
+		<h3>見出し</h3>
+            
+            <%= f.text_field :sixth_title, size: "120x3" %>
+            
+        <h3>画像</h3>
+            <center><%= f.file_field :sixth_image %></center>
+           
+        <h3>記事</h3>
+            
+            <%= f.text_area :sixth_body, size: "120x3" %>
+            
+        <h3>リンク</h3>
+            
+            <%= f.text_field :sixth_link, size: "120x3" %>
+<br>
+<br>
+           <%= f.submit "投稿", class: "btn btn-primary" %>
+		</div>
+	</div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<div class="footer_fix_btn">
+    <%= f.submit "投稿", class: "btn btn-primary btn-lg" %>
+    <br>
+<%= link_to("プレビュー", "/posts/#{@post.id}/edit", class: "btn btn-warning pc") %>
+    <br>
+          <% end %>
+    <br>
+    OGI.ver by <a href="https://twitter.com/sim_niigata">オギギ＠ブログ▶︎エンジニア<i class="fab fa-twitter"></i></a>
+</div>
