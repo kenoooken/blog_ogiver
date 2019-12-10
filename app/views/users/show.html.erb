@@ -13,6 +13,14 @@
     <% end %>
 <% end %>
 
+    <!--　user_signed_in?/ユーザーがサインイン済かどうかを判定する
+        user.id == current_user.id
+        サインインしているユーザー.idと@user.idが一致しているか？を判定　-->
+    <% if user_signed_in? && @user.id == current_user.id %>
+      <div><%= link_to "へんしゅう", edit_user_registration_path(current_user),
+        class: "btn btn-primary" %></div>
+      <%= link_to "とうこうする", root_path, class: "btn btn-primary" %>
+    <% end %>
 
   <br>
 
