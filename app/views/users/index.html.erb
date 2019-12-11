@@ -1,4 +1,4 @@
-<h1>ユーザー一覧</h1>
+<h3>ユーザー一覧</h3>
 
 <% @users.each do |user| %>
   <hr>
@@ -24,6 +24,6 @@
   </div>
 </section>   
  
-
-
 <% end %>
+
+<%= paginate @users %>

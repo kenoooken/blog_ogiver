@@ -41,10 +41,20 @@
       <% end %>
   </div>
 </section>   
+<%= paginate @posts %>
 
-
+<section class="card">
+  <div class="card-content">
+    <p class="card-text">
 <% @favorite_posts.each do |post| %>
   <hr>
     <p>いいね▼</p>
   <p><%=link_to post.title, post_path(post.id) %></p>
 <% end %>
+    </p>
+  </div>
+  <div class="card-link">
+  </div>
+</section>   
+
+<%= paginate @favorite_posts %>
