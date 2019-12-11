@@ -3,7 +3,6 @@
 <br>
 <h3><span>名前</span><%= @user.username %></h3>
 <%= image_tag @user.picture.to_s, class: "img-thumbnail" %>
-<p><span>email:</span><%= @user.email %></p>
 <p><%=link_to "フォロー", follows_user_path(@user.id) %></p>
 <p><%=link_to "フォロワー", followers_user_path(@user.id) %></p>
 <% if current_user != @user %>
@@ -14,6 +13,14 @@
     <% end %>
 <% end %>
 
+    <!--　user_signed_in?/ユーザーがサインイン済かどうかを判定する
+        user.id == current_user.id
+        サインインしているユーザー.idと@user.idが一致しているか？を判定　-->
+    <% if user_signed_in? && @user.id == current_user.id %>
+      <div><%= link_to "へんしゅう", edit_user_registration_path(current_user),
+        class: "btn btn-primary" %></div>
+      <%= link_to "とうこうする", root_path, class: "btn btn-primary" %>
+    <% end %>
 
   <br>
 
@@ -34,10 +41,20 @@
       <% end %>
   </div>
 </section>   
+<%= paginate @posts %>
 
-
+<section class="card">
+  <div class="card-content">
+    <p class="card-text">
 <% @favorite_posts.each do |post| %>
   <hr>
     <p>いいね▼</p>
   <p><%=link_to post.title, post_path(post.id) %></p>
 <% end %>
+    </p>
+  </div>
+  <div class="card-link">
+  </div>
+</section>   
+
+<%= paginate @favorite_posts %>

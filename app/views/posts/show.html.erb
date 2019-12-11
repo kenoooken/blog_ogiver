@@ -3,17 +3,39 @@
 <%= link_to("編集", "/posts/#{@post.id}/edit", class: "btn btn-primary") %>
 <% end %>
 
-<br>    
-<h3><%= @post.second_title %></h3>
-<p><%= @post.second_body %></p>
-<a href= "<%= @post.second_link %>" ><%= @post.second_link %></a>
-
 
 <br>
+    <!--　１タブ　-->
+<h3><%= @post.second_title %></h3>
+<%= image_tag @post.second_image.to_s, class:"card-img"%>
+<p><%= simple_format(@post.second_body) %></p>
+<a href= "<%= @post.second_link %>" ><%= @post.second_link %></a>
+    <!--　２タブ　-->
+<h3><%= @post.third_title %></h3>
+<%= image_tag @post.third_image.to_s, class:"card-img"%>
+<p><%= simple_format(@post.third_body) %></p>
+<a href= "<%= @post.third_link %>" ><%= @post.third_link %></a>
+    <!--　３タブ　-->
+<h3><%= @post.fourth_title %></h3>
+<%= image_tag @post.fourth_image.to_s, class:"card-img"%>
+<p><%= simple_format(@post.fourth_body) %></p>
+<a href= "<%= @post.fourth_link %>" ><%= @post.fourth_link %></a>
+    <!--　４タブ　-->
+<h3><%= @post.fifth_title %></h3>
+<%= image_tag @post.fifth_image.to_s, class:"card-img"%>
+<p><%= simple_format(@post.fifth_body) %></p>
+<a href= "<%= @post.fifth_link %>" ><%= @post.fifth_link %></a>
+    <!--　５タブ　-->
+<h3><%= @post.sixth_title %></h3>
+<%= image_tag @post.sixth_image.to_s, class:"card-img"%>
+<p><%= simple_format(@post.sixth_body) %></p>
+<a href= "<%= @post.sixth_link %>" ><%= @post.sixth_link %></a>
 <br>
 <% if user_signed_in? && @post.user_id == current_user.id %>
 <%= link_to("編集", "/posts/#{@post.id}/edit", class: "btn btn-primary") %>
-   <%= link_to("削除", "/posts/#{@post.id}/destroy", class: "btn btn-primary") %>
+<div class="btn btn-primary">
+   <%= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"}) %>
+</div>
 
 <% end %>
 
@@ -22,6 +44,13 @@
 <br>
 <br>
 <br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 
 <div class="footer_fix_btn">
     <div class="pc">

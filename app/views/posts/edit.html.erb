@@ -6,6 +6,7 @@
 <%= link_to("プレビュー", "/posts/#{@post.id}/edit", class: "btn btn-warning") %>
 <br>
 <br>
+<h3>投稿一覧のプレビュー▼</h3>
 <section class="card">
     <%= image_tag @post.image.to_s, class:"card-img"%>
   <div class="card-content">
@@ -17,40 +18,41 @@
   </div>
   <div class="card-link"><span>ブログ内容▼</span>
       <br>
-    <p><%= @post.body %></p>
+    <p><%= simple_format(@post.body) %>
+      </p>
   </div>
 </section> 
 
 <br>
-<h3>プレビュー</h3>
+<h3>プレビュー▼</h3>
     <!--　１タブ　-->
 <h3><%= @post.second_title %></h3>
 <%= image_tag @post.second_image.to_s, class:"card-img"%>
-<p><%= @post.second_body %></p>
+<p><%= simple_format(@post.second_body) %></p>
 <a href= "<%= @post.second_link %>" ><%= @post.second_link %></a>
 <br>
     <!--　２タブ　-->
 <h3><%= @post.third_title %></h3>
 <%= image_tag @post.third_image.to_s, class:"card-img"%>
-<p><%= @post.third_body %></p>
+<p><%= simple_format(@post.third_body) %></p>
 <a href= "<%= @post.third_link %>" ><%= @post.third_link %></a>
 <br>
     <!--　３タブ　-->
 <h3><%= @post.fourth_title %></h3>
 <%= image_tag @post.fourth_image.to_s, class:"card-img"%>
-<p><%= @post.fourth_body %></p>
+<p><%= simple_format(@post.fourth_body) %></p>
 <a href= "<%= @post.fourth_link %>" ><%= @post.fourth_link %></a>
 <br>  
     <!--　４タブ　-->
 <h3><%= @post.fifth_title %></h3>
 <%= image_tag @post.fifth_image.to_s, class:"card-img"%>
-<p><%= @post.fifth_body %></p>
+<p><%= simple_format(@post.fifth_body) %></p>
 <a href= "<%= @post.fifth_link %>" ><%= @post.fifth_link %></a>
 <br>
     <!--　５タブ　-->
 <h3><%= @post.sixth_title %></h3>
 <%= image_tag @post.sixth_image.to_s, class:"card-img"%>
-<p><%= @post.sixth_body %></p>
+<p><%= simple_format(@post.sixth_body) %></p>
 <a href= "<%= @post.sixth_link %>" ><%= @post.sixth_link %></a>
 <br>
 
@@ -59,12 +61,14 @@
             <%= form_with model: @post do |f| %>
 
             <h3>タイトル</h3>
+            <p>＊タイトル無し・100文字以上は投稿できません</p>
             <%= f.text_field :title, size: "120x3" %>
 <br>
             <h3>サムネ</h3>
             <center><%= f.file_field :image %></center>
 <br>
             <h3>メタタグ</h3>
+            <p>＊100文字以上は投稿できません</p>
             <%= f.text_area :body, size: "120x10" %>
 <br>
            

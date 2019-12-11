@@ -17,7 +17,7 @@ before_action :authenticate_user!, except: [:index]
            # render 'edit'
             render "edit"
      else
-            flash[:alert] = "しゃしんが　ないよ！"
+            flash[:alert] = "注意事項を確認！"
         #    render plain: @post.erros.inspect
             render 'edit'
         end
@@ -33,7 +33,7 @@ before_action :authenticate_user!, except: [:index]
         else
             
           #flash[:notice] = "投稿"
-          flash[:alert] = "しゃしんが　ないよ！"
+          flash[:alert] = "注意事項を確認！"
           render("posts/new")
         end
     end
