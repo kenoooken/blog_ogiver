@@ -1,26 +1,68 @@
 # アプリ名
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+『OGI.VER』（NEVRまとめ風アプリ）
+https://blog7ogi.herokuapp.com/
+
+テスト用ユーザーのアドレス・パスワードを表示しています。
+採用担当の方、閲覧を宜しくお願い致します。
 
 Things you may want to cover:
 
 # README
 
-* Ruby version
+【環境】
+Ruby　2.5.0
+Rails 5.2.4
+git 2.21.0
+node 10.15.3
 
-* System dependencies
+【機能】
+ログイン機能
+ユーザー認証機能
+フォロー機能
+ページネーション機能
+画像投稿機能
+お気に入り機能
 
-* Configuration
+【技術】
+使用言語:　　　 Ruby
+フレームワーク: Ruby on Rails
+セッション管理: Cookie (Deviseより)
+データベース:　 PostgreSQL 11.3
+バージョン管理: Git
+リポジトリ管理: GitHub
+インフラ:　　　 Heroku
 
-* Database creation
+# アプリの用途
+『ブロガーに寄り添った』アプリです。
 
-* Database initialization
+・ドメインパワーが弱い。
+・閲覧してもらえない。
+・収益化ができない。
 
-* How to run the test suite
+など悩みを抱えているブロガーが多く存在します。
+そんなブロガーの悩みを解決すれば、サービスを利用してくれてコンテンツが増え、自動的にサービスが回り出す。と考えています。
 
-* Services (job queues, cache servers, search engines, etc.)
+対象ユーザーを、
+・コンテンツ制作者のブロガー
+・検索流入からの閲覧者
 
-* Deployment instructions
+としています。
 
-* ...
+# アプリの使い方
+『新規登録』後に
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
