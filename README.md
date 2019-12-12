@@ -50,19 +50,56 @@ node 10.15.3
 としています。
 
 # アプリの使い方
-『新規登録』後に
+『新規登録』後に、
+『新規投稿』をクリック。
 
+投稿手順▼
+１）「新規投稿」をクリック。
+２）「タイトル」、「サムネ」などブログ形式で入力。
+３）「投稿」を押すと投稿完了。
 
+編集手順▼
+１）「編集」をクリック。
+２）「タイトル」、「サムネ」などブログ形式で入力。
+３）「投稿」を押すと編集完了。
 
+# 主な参考ページ
 
+・Ruby on Rails Tutorial
+https://railstutorial.jp/
 
+【Gem】
 
+・［Rails] deviseの使い方（rails5版）
+https://qiita.com/cigalecigales/items/f4274088f20832252374
 
+・Github devise
+https://github.com/plataformatec/devise
 
+・［Ruby on Rails］gem(Kaminari)でページネーション機能を追加して
+Bootstrapを適用する。
+https://qiita.com/residenti/items/1ae1e5ceb59c0729c0b9
 
+RailsでCarrierWaveを使って画像のアップロード機能を作る
+https://kurose.me/carrierwave/
 
+・Github carrierwave
+https://github.com/carrierwaveuploader/carrierwave
 
+・Github minimagick
+https://github.com/minimagick/minimagick
 
+【フォント】
 
+・日本語フリーフォントの「ふい字」をWEBフォントで活用しよう！
+http://customtemplate.blog112.fc2.com/blog-entry-143.html
+
+【デザイン】
+
+・カードデザインのポイントと実装
+https://www.webcreatorbox.com/tech/card
+
+・【レスポンシブ】PCとスマホで違う画像に切り替える方法！CSSだけで簡単画像切り替え！
+https://fastcoding.jp/blog/all/frontend/responsive_img/
 
 
