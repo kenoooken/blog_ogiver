@@ -1,8 +1,11 @@
 <br>
 <br>
 <br>
-<h3><span>名前</span><%= @user.username %></h3>
+<div class="user">
 <%= image_tag @user.picture.to_s, class: "img-thumbnail" %>
+    </div>
+<h3><span>名前:</span><%= @user.username %></h3>
+
 <p><%=link_to "フォロー", follows_user_path(@user.id) %></p>
 <p><%=link_to "フォロワー", followers_user_path(@user.id) %></p>
 <% if current_user != @user %>
@@ -24,11 +27,14 @@
 
   <br>
 
-
+<h3>投稿した記事▼</h3>
+<div class="pc">
+    
 <section class="card">
   <div class="card-content">
     <p class="card-text">
         <% @posts.each do |post| %>
+        <%= image_tag post.image.to_s, class:"icon2"%>
         <span>タイトル▼</span>
         <br>
       <h3><%=link_to post.title, post_path(post.id)%></h3>
@@ -40,9 +46,13 @@
   <div class="card-link">
       <% end %>
   </div>
-</section>   
+</section>  
+
+</div>
 <%= paginate @posts %>
 
+<div class="mb">
+<h3>いいね！した記事▼</h3>
 <section class="card">
   <div class="card-content">
     <p class="card-text">
@@ -55,6 +65,7 @@
   </div>
   <div class="card-link">
   </div>
-</section>   
+</section>
+</div>
 
 <%= paginate @favorite_posts %>

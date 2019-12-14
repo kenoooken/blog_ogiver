@@ -4,9 +4,36 @@
 
 <% @posts.each do |post| %>
   <br>
-
+    <div class="user">
+<%= image_tag post.user.picture.to_s, class: "img-thumbnail" %>
+    </div>
 <p><span>名前：</span><%=link_to post.user.username, user_path(post.user.id) %></p> 
 
+<!-- PC -->
+<div class="pc">
+<center>
+<div class="card2">
+    <div class="user">
+        <div>
+        </div>
+    </div>
+    <%= image_tag post.image.to_s, class:"image2"%>
+    <p class="content2">
+                <span>タイトル▼</span>
+        <br>
+      <h3><%=link_to post.title, post_path(post.id)%></h3>
+    <br>
+        <span>ブログ内容▼</span>
+      <br>
+    <p><%= link_to post.body, post_path(post.id) %></p></p>
+    <br>
+</div>
+</center>
+</div>
+
+
+<!-- スマホ -->
+<div class="mb">
 <section class="card">
     <%= image_tag post.image.to_s, class:"card-img"%>
   <div class="card-content">
@@ -20,7 +47,8 @@
       <br>
     <p><%= link_to post.body, post_path(post.id) %></p>
   </div>
-</section>   
+</section> 
+  </div>
 
   <% if user_signed_in? %>
 

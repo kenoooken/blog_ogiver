@@ -7,6 +7,7 @@ class Post < ApplicationRecord
     
         default_scope -> { order(created_at: :desc) }
     
+    
     mount_uploader :image, ImageUploader
     mount_uploader :second_image, PostUploader
     mount_uploader :third_image, PostUploader
