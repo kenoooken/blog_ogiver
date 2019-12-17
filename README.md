@@ -2,7 +2,7 @@
 
 『OGI.VER』（NEVRまとめ風アプリ）
 
-https://blog7ogi.herokuapp.com/
+https://blogogi.herokuapp.com/
 
 
 テスト用ユーザーのアドレス・パスワードを表示しています。
