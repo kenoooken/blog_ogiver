@@ -5,7 +5,7 @@ ruby '2.5.0'
 gem 'devise'
 gem 'bootstrap-sass',          '3.3.7'
 gem 'jquery-rails'
-gem 'carrierwave', '~> 1.0'
+gem 'carrierwave', '~> 1.3'
 gem 'kaminari'
 gem 'rails-i18n'
 
